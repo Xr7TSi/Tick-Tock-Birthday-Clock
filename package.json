@@ -1,0 +1,36 @@
+{
+  "scripts": {
+    "start": "node server.js",
+    "seeds": "node seeds/seed.js"
+  },
+  "name": "14-techblog",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmp-beep/14-TechBlog.git"
+  },
+  "keywords": [
+    "tech",
+    "blog",
+    "sequelize",
+    "handlebars"
+  ],
+  "author": "lisa pessin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lmp-beep/14-TechBlog/issues"
+  },
+  "homepage": "https://github.com/lmp-beep/14-TechBlog#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.1.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.1",
+    "sequelize": "^6.6.2"
+  }
+}
