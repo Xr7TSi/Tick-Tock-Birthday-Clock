@@ -1,6 +1,21 @@
 const router = require('express').Router();
 const User = require('../../models/User');
 
+
+//this is the api/users endpoint
+
+
+// create new user
+// post should look lie this:
+/*
+ /* post should look like this...
+   {
+    "name": "Charlie Brown",
+    "email": "cbrown@yahoo.com",
+    "password": "password12345",
+    "birthday": "06/13/62"
+  }
+  */
 router.post('/', async (req, res) => {
   try {
     const userData = await User.create(req.body);
