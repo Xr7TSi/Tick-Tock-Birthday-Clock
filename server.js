@@ -39,3 +39,6 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });
+
+
+// use npm run dev to start application.  THis will trigger live server restarts with each save of your code. JDR

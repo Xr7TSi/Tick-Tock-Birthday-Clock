@@ -1,7 +1,8 @@
 {
   "scripts": {
     "start": "node server.js",
-    "seeds": "node seeds/seed.js"
+    "seeds": "node seeds/seed.js",
+    "dev": "nodemon server.js"
   },
   "name": "14-techblog",
   "description": "",

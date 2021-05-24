@@ -35,13 +35,13 @@ User.init(
         len: [8],
       },
     },
-    // birthday: {
-    //   type: DataTypes.DATE,
-    //   allowNull: false,
-    //   validate: {
-    //     isDate: true,
-    //   },
-    // }
+    birthday: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        isDate: true,
+      },
+    }
   },
   {
     hooks: {
