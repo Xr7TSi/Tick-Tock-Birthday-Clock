@@ -12,7 +12,7 @@ Wishlist.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    wishlist_Text: {
+    wishlist_text: {
       type: DataTypes.STRING,
       allowNull: true,
     },
