@@ -12,7 +12,7 @@ Wishlist.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    wishlistText: {
+    wishlist_Text: {
       type: DataTypes.STRING,
       allowNull: true,
     },
@@ -28,3 +28,5 @@ Wishlist.init(
 );
 
 module.exports = Wishlist;
+
+

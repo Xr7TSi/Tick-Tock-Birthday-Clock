@@ -14,3 +14,4 @@ Wishlist.belongsTo(User, {
 
 
 module.exports = { User, Wishlist };
+
