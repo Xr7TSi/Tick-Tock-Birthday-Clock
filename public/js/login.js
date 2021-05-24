@@ -28,11 +28,12 @@ const signupFormHandler = async (event) => {
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
   const password = document.querySelector('#password-signup').value.trim();
+  const birthday = document.querySelector('#birthday-signup').value.trim();
 
-  if (name && email && password) {
+  if (name && email && password && birthday) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ name, email, password }),
+      body: JSON.stringify({ name, email, password, birthday }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -43,6 +44,10 @@ const signupFormHandler = async (event) => {
     }
   }
 };
+
+
+   
+
 
 document
   .querySelector('.login-form')
