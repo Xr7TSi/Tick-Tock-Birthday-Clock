@@ -36,8 +36,6 @@ User.init(
       },
     },
     birthday: {
-      type: 'TIMESTAMP WITHOUT TIME ZONE',
-  get () { return moment(val).format('YYYY-MM-DD HH:mm:ss ZZ')},
       allowNull: false,
       validate: {
         isDate: true,
