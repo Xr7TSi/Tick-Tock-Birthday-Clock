@@ -9,11 +9,11 @@ const sharedWishlistHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
 
-    // if (response.ok) {
-    //   document.location.replace("/");
-    // } else {
-    //   alert("Failed to post.");
-    // }
+    if (response.ok) {
+      document.location.replace("/dashboard");
+    } else {
+      alert("Failed to post.");
+    }
 
     if (response.ok) {console.log("HI"), console.log(wishlistEntry + "  postToWishlist.js");
     } else {
