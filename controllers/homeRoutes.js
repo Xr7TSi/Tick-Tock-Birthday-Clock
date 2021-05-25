@@ -37,4 +37,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+
+// renders addWishlistItem.handlebars from the /post endpoint
+router.get('/post', (req, res) => {
+  res.render('addWishlistItem');
+});
+
 module.exports = router;
