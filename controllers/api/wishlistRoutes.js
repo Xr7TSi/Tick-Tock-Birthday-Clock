@@ -1,5 +1,6 @@
 const router = require("express").Router();
 const { Wishlist } = require("../../models");
+const { User } = require("../../models");
 
 //this is the api/wishlist endpoint
 
@@ -10,6 +11,31 @@ router.get("/", async (req, res) => {
   });
   res.json(allWishlist);
 });
+
+
+// get wishlist by user return as JSON payload.  this is in progress
+router.get("/userId/:id", async (req, res) => {
+  try {
+    const selectedUserWishlist = await User.findOne({
+      where: { id: req.params.id },
+      include: {
+        model: Wishlist,
+        attributes: [
+          "wishlist_text",
+        ],
+      },
+    });
+    if (!selectedUserWishlist) {
+      res.status(404).json({ message: "User does not exist" });
+      return;
+    }
+    res.status(200).json(selectedUserWishlist);
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+
 
 // get single wishlist by id and return selected wishlist as JSON payload
 router.get("/:id", async (req, res) => {
@@ -30,7 +56,7 @@ router.get("/:id", async (req, res) => {
 // post a new wishlist to the database and return new wishlist as JSON payload
  /* post should look like this...
     {
-        "wishlist_text": "Super Soaker"
+        "wishlist_array": ["Super Soaker Extreme", "RC Truck", "Baseball"]
     }
     */
 router.post("/", async (req, res) => {
@@ -46,7 +72,7 @@ router.post("/", async (req, res) => {
  /* put should look like this...
       {
         "wishlist_id": "6",
-        "wishlist_text": "Super Soaker Extreme"
+        "wishlist_array": ["Super Soaker Extreme", "RC Truck", "Volleyball"]
       }
     */
 router.put("/:id", async (req, res) => {  
