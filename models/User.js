@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require('sequelize');
+const { Model, DataTypes, Sequelize } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
 
@@ -36,7 +36,8 @@ User.init(
       },
     },
     birthday: {
-      type: DataTypes.DATE,
+      type: 'TIMESTAMP WITHOUT TIME ZONE',
+  get () { return moment(val).format('YYYY-MM-DD HH:mm:ss ZZ')},
       allowNull: false,
       validate: {
         isDate: true,

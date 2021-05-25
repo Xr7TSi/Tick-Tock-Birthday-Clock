@@ -21,5 +21,3 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
-
-//this can be deleted by anyone at any time

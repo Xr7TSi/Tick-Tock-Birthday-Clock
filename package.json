@@ -4,26 +4,27 @@
     "seeds": "node seeds/seed.js",
     "dev": "nodemon server.js"
   },
-  "name": "14-techblog",
-  "description": "",
+  "name": "tick-tock-birthday-clock",
+  "description": "Test Content",
   "version": "1.0.0",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/lmp-beep/14-TechBlog.git"
+    "url": "git+https://github.com/Xr7TSi/Tick-Tock-Birthday-Clock"
   },
   "keywords": [
-    "tech",
-    "blog",
+    "birthday",
+    "clock",
+    "countdown",
     "sequelize",
     "handlebars"
   ],
-  "author": "lisa pessin",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/lmp-beep/14-TechBlog/issues"
+    "url": "https://github.com/Xr7TSi/Tick-Tock-Birthday-Clock/issues"
   },
-  "homepage": "https://github.com/lmp-beep/14-TechBlog#readme",
+  "homepage": "https://github.com/Xr7TSi/Tick-Tock-Birthday-Clock#readme",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.1.1",
@@ -31,8 +32,10 @@
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
     "express-session": "^1.17.1",
+    "moment": "^2.29.1",
     "mysql2": "^2.2.1",
     "nodemon": "^2.0.7",
     "sequelize": "^6.6.2"
-  }
+  },
+  "devDependencies": {}
 }
