@@ -1,11 +1,10 @@
 const sharedWishlistHandler = async (event) => {
   event.preventDefault();
   const wishlistEntry = document.querySelector("#wishlistEntry").value.trim();
-  console.log(wishlistEntry)
   // code to get wishlist from form
   if (wishlistEntry) {
-    const response = await fetch("/api/wishlist", {
-      method: "POST",
+    const response = await fetch('./api/wishlist', {
+      method: 'POST',
       body: JSON.stringify({ wishlistEntry }),
       headers: { "Content-Type": "application/json" },
     });
@@ -16,7 +15,7 @@ const sharedWishlistHandler = async (event) => {
     //   alert("Failed to post.");
     // }
 
-    if (response.ok) {console.log("HI");
+    if (response.ok) {console.log("HI"), console.log(wishlistEntry + "  postToWishlist.js");
     } else {
       alert("Failed to post.");
     }
