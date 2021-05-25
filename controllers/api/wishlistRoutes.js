@@ -18,24 +18,31 @@ router.get("/userId/:id", async (req, res) => {
   try {
     const selectedUserWishlist = await User.findOne({
       where: { id: req.params.id },
-      include: {
-        model: Wishlist,
-        attributes: ["wishlist_text"],
-      },
+      // include: {
+      //   model: Wishlist,
+      //   attributes: ["wishlist_text"],
+      // },
     });
 
-    const wishlistMapped = selectedUserWishlist.map((wishlist) => wishlist.get({ plain: true }));
-    res.render('sharedWishlist', { wishlistMapped });
+    console.log(selectedUserWishlist)
+    
+    // const wishlistMapped = selectedUserWishlist.map((wishlist) => wishlist.get({ plain: true }));
+    // res.render('sharedWishlist', { wishlistMapped });
 
-    if (!selectedUserWishlist) {
-      res.status(404).json({ message: "User does not exist" });
-      return;
-    }
-    res.status(200).json(selectedUserWishlist);
+
+    // if (!selectedUserWishlist) {
+    //   res.status(404).json({ message: "User does not exist" });
+    //   return;
+    // }
+    // res.status(200).json(selectedUserWishlist);
   } catch (err) {
     res.status(500).json(err);
   }
 });
+
+// router.get("/userId/:id", (req, res) => {
+//     res.render('sharedWishlist')
+// });
 
 // get single wishlist by id and return selected wishlist as JSON payload
 router.get("/:id", async (req, res) => {
