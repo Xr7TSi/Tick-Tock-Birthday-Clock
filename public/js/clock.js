@@ -2,7 +2,7 @@ const timeLeft = document.getElementById('time-left')
 console.log("testing")
 
 // need to link this up to user input
-const birthday = new Date ('07/30/2021')
+const birthday = document.getElementById("birthday-signup");
 
 
 // times
