@@ -13,6 +13,7 @@ router.get("/", async (req, res) => {
 });
 
 // get wishlist by user return as JSON payload.  this is in progress
+// this is the api/wishlist/userId/ endpoint
 router.get("/userId/:id", async (req, res) => {
   try {
     const selectedUserWishlist = await User.findOne({
@@ -22,6 +23,10 @@ router.get("/userId/:id", async (req, res) => {
         attributes: ["wishlist_text"],
       },
     });
+
+    const wishlistMapped = selectedUserWishlist.map((wishlist) => wishlist.get({ plain: true }));
+    res.render('sharedWishlist', { wishlistMapped });
+
     if (!selectedUserWishlist) {
       res.status(404).json({ message: "User does not exist" });
       return;
@@ -59,9 +64,11 @@ router.post("/", async (req, res) => {
   try {
     const wishlistEntry = await Wishlist.create({
       user_name: req.session.user_name,
-      wishlist_text: req.body.wishlistEntry,
+=======
+      wishlist_text: req.body.wishlistEntry
     });
     res.status(200).json(wishlistEntry);
+    console.log(wishlistEntry + " router post")
   } catch (err) {
     res.status(400).json(err);
     

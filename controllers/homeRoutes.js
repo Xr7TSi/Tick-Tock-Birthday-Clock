@@ -43,4 +43,9 @@ router.get('/post', (req, res) => {
   res.render('addWishlistItem');
 });
 
+// renders sharedWishList.handlebars from the /wishlist endpoint
+router.get('/wishlist', (req, res) => {
+  res.render('sharedWishlist');
+});
+
 module.exports = router;
