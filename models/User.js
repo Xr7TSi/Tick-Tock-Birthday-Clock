@@ -36,8 +36,7 @@ User.init(
       },
     },
     birthday: {
-      type: 'TIMESTAMP WITHOUT TIME ZONE',
-  get () { return moment(val).format('YYYY-MM-DD HH:mm:ss ZZ')},
+      type: Sequelize.DATEONLY,
       allowNull: false,
       validate: {
         isDate: true,
