@@ -10,14 +10,15 @@ router.get('/', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/dashboard', withAuth, async (req, res) => {
+  console.log(req.session)
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ['password'] },
     });
-
+    console.log(userData)
     const user = userData.get({ plain: true });
-
+    
     res.render('dashboard', {
       ...user,
       logged_in: true
@@ -35,6 +36,17 @@ router.get('/login', (req, res) => {
   }
 
   res.render('login');
+});
+
+
+// renders addWishlistItem.handlebars from the /post endpoint
+router.get('/post', (req, res) => {
+  res.render('addWishlistItem');
+});
+
+// renders sharedWishList.handlebars from the /wishlist endpoint
+router.get('/wishlist', (req, res) => {
+  res.render('sharedWishlist');
 });
 
 module.exports = router;

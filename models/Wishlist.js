@@ -28,5 +28,3 @@ Wishlist.init(
 );
 
 module.exports = Wishlist;
-
-
