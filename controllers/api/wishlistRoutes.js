@@ -64,7 +64,6 @@ router.post("/", async (req, res) => {
   try {
     const wishlistEntry = await Wishlist.create({
       user_name: req.session.user_name,
-=======
       wishlist_text: req.body.wishlistEntry
     });
     res.status(200).json(wishlistEntry);
