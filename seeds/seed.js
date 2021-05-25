@@ -6,7 +6,7 @@ const userData = require('./userData.json');
 const wishlistData = require('./wishlistData.json');
 
 const seedDatabase = async () => {
-  await sequelize.sync({ force: true });
+  await sequelize.sync({ force: false });
 
   await User.bulkCreate(userData, {
     individualHooks: true,
@@ -21,5 +21,3 @@ const seedDatabase = async () => {
 };
 
 seedDatabase();
-
-//this can be deleted by anyone at any time
