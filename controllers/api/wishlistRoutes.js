@@ -48,26 +48,32 @@ router.get("/:id", async (req, res) => {
   }
 });
 
-// post a new wishlist to the database and return new wishlist as JSON payload
+// post a new wishlist item to the database
+// this is the api/wishlist/ endpoint
 /* post should look like this...
     {
-        "wishlist_array": ["Super Soaker Extreme", "RC Truck", "Baseball"]
+        "wishlist_text": "Super Soaker Extreme"
     }
     */
 router.post("/", async (req, res) => {
   try {
-    const newWishlist = await Wishlist.create(req.body);
-    res.status(200).json(newWishlist);
+    const wishlistEntry = await Wishlist.create({
+      user_name: req.session.user_name,
+      wishlist_text: req.body.wishlist_text,
+    });
+    res.status(200).json(wishlistEntry);
   } catch (err) {
     res.status(400).json(err);
+    
   }
 });
+
 
 // update a wishlist by wishlist_id and return updated wishlist as JSON payload
 /* put should look like this...
       {
         "wishlist_id": "6",
-        "wishlist_array": ["Super Soaker Extreme", "RC Truck", "Volleyball"]
+        "wishlist_text": "Volleyball"
       }
     */
 router.put("/:id", async (req, res) => {
