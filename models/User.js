@@ -36,6 +36,7 @@ User.init(
       },
     },
     birthday: {
+      type: Sequelize.DATEONLY,
       allowNull: false,
       validate: {
         isDate: true,
