@@ -1,0 +1,107 @@
+<div class="signup-container">  
+ 
+      <a href="/"><img src="../images/logo.png"  id="logo-login"></a>
+     
+      {{!-- <div class="home-buttons">
+        <button><a href="/login">LOGIN</a></button>
+        <button><a href="/login">SIGNUP</a></button>
+      </div> --}}
+
+
+
+<div class="col-md-6">
+    <h2>Signup</h2>
+
+    <form class="form signup-form">
+      <div class="form-group">
+        <label for="name-signup">name:</label>
+        <input class="form-input" type="text" id="name-signup" />
+      </div>
+      {{!-- <div class="form-group">
+        <label for="email-signup">email:</label>
+        <input class="form-input" type="text" id="email-signup" />
+      </div> --}}
+      <div class="form-group">
+        <label for="password-signup">password:</label>
+        <input class="form-input" type="password" id="password-signup" />
+      </div>
+      <br>
+       <div class="form-group">
+        <label for="birthday-signup">birthday:</label>
+        {{!-- <input class="form-input" type="date" id="birthday-signup" placeholder="MM/DD/YYYY"/> --}}
+        <select class="form-select" id="month-signup" aria-label="Default select example">
+          <option selected>Month</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+        <select class="form-select" id="day-signup" aria-label="Default select example">
+          <option selected>Day</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+      </div>
+      <br>
+      {{!-- <div class="form-group">
+        <label for="color-signup">favorite color:</label>
+        <select class="form-select" id="color-signup" aria-label="Default select example">
+          <option selected>Color</option>
+          <option value="1">Red</option>
+          <option value="2">Pink</option>
+          <option value="3">Blue</option>
+          <option value="4">Green</option>
+          <option value="5">Purple</option>
+          <option value="6">Orange</option>
+          <option value="7">Yellow</option>
+        </select>
+      </div> --}}
+      <br>
+      <div class="form-group">
+        <button class="btn btn-primary" id="signup-btn" type="submit">signup</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+</div> 
+
+<script src="./js/signup.js"></script>

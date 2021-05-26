@@ -39,6 +39,11 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
+router.get('/signup', (req, res) => {
+  res.render('signup');
+})
+
+
 // renders addWishlistItem.handlebars from the /post endpoint
 router.get("/post", (req, res) => {
   res.render("addWishlistItem");
