@@ -11,13 +11,11 @@ router.get("/", async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get("/dashboard", withAuth, async (req, res) => {
-  console.log(req.session);
   try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
       attributes: { exclude: ["password"] },
     });
-    console.log(userData);
     const user = userData.get({ plain: true });
 
     res.render("dashboard", {
@@ -44,36 +42,31 @@ router.get('/signup', (req, res) => {
 })
 
 
-// renders addWishlistItem.handlebars from the /post endpoint
+// renders addWishlistItem.handlebars.  this is the /post endpoint
 router.get("/post", (req, res) => {
   res.render("addWishlistItem");
 });
 
-// renders sharedWishList.handlebars from the /wishlist endpoint
+// renders sharedWishlist.handlebars using current session user ID.  this is the /wishlist endpoint
 router.get("/wishlist", async (req, res) => {
   try {
-    const userWishlist = await User.findByPk(req.session.user_id, {
+    const userData = await User.findByPk(req.session.user_id, {
       include: [{ model: Wishlist }],
-    });
-
-    if (!userWishlist) {
-      res.status(404).json({ message: "No wishlist exists." });
+    }); 
+    const user = userData.get({ plain: true });
+    
+    if (!user) {
+      res.status(404).json({ message: "User does not exist" });
       return;
     }
-    // const userWishlistMapped = userWishlist.map((wishlist) =>
-    //   wishlist.get({ plain: true })
-    // );
-    // res.render("sharedWishlist", { userWishlistMapped });
-    res.render("sharedWishlist");
+    console.log(user)
+    res.render("sharedWishlist", { ...user });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
 
 
-// this route gets an empty wishlist template.  used for testing
-// router.get("/wishlist", async (req, res) => {res.render("sharedWishlist")})
   
 
 module.exports = router;

@@ -1,13 +1,17 @@
 <section>
-    <h1>SharedWishlist</h1>
    
-    
+  <h1>{{name}}'s Wishlist! </h1>
+
+  {{#each wishlists as |wishlist|}}
+    <div">
+      <p>
+        {{wishlist.wishlist_text}}.
+      </p>
+    </div>
+  {{/each}}
  
-   {{#each allUserMapped as |user|}}
-  
-  <h5>Wishlist from: {{user.name}} </h5>
- 
+</section>
+
+
 
   
-  {{/each}}
-</section>
