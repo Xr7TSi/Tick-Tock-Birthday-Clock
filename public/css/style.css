@@ -1,24 +1,63 @@
-header, .project:not(:last-child) {
-  border-bottom: 1px solid #ccc;
+html { 
+  /* background: url(../images/logo.png) no-repeat center center fixed; */
+  /* -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover; */ 
+  background-color: #85d2f0;
+
 }
 
-.no-button {
-  background: none;
-  border: none;
+.form-select {
+  height: 35px;
+  width: 80px;
+  padding-left: 10px;
+}
+
+#logo {
+  /* padding-top: 20%; */
+  padding-left: 10%;
+  /* height: 10%; */
+  width: 100%;
+}
+
+#logo-login {
+  /* padding-top: 3%;
+  padding-left: 35%;
+  padding-bottom: 3%; */
+  width: 50%;
+}
+
+.home-buttons {
+  padding-left: 45%;
+}
+
+.logout-btn {
+  padding-left: 90%;
+}
+
+#dashboard-container {
+  padding-top: 6%;
+  text-align: center;
+}
+
+main.col-auto {
+  padding-left: 0;
+}
+
+#dashboard-btns {
+  padding-top: 15px;
+}
+
+#dashboard-logo {
+  width: 50%;
   padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
 }
 
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
+.login-container {
+  padding-left: 30%;
 }
 
-.dollar-amount {
-  color: #056605;
-  font-weight: bold;
-  margin-left: -5px;
+.signup-container {
+  padding-left: 30%;
 }

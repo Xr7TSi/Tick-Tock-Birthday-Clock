@@ -1,4 +1,18 @@
-<div class="row">
+
+        
+
+
+
+       <div class="logout-btn">
+        <button id="logout">logout</button>
+      </div>
+
+<div id="dashboard-logo">
+      <a href="/"><img src="../images/logo.png"  id="logo-login"></a>
+</div>
+
+<div id="dashboard-container">
+<div class="row" id="welcome">
   <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
   </div>
@@ -8,8 +22,14 @@
         {{{body}}}
 
         <h1 id="time-left"></h1>
-        <h3>Until Your Birthday On: {{birthday}}</h3>
+        <h3>Until Your Birthday On {{birthdayMonth}} {{birthdayDay}}</h3>
       </main>
+
+<div id="dashboard-btns">
+      <button><a href="/post">Post wishlist item</a></button>
+        <button><a href="/wishlist">View Wishlist</a></button>
+</div>
+        </div>
 
 <script src="./js/clock.js"></script>
 
