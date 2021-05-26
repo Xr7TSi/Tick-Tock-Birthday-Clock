@@ -1,11 +1,13 @@
 <section>
     <h1>SharedWishlist</h1>
+   
     
-  {{#each wishlistMapped as |wishlist|}}
+ 
+   {{#each allUserMapped as |user|}}
   
-  <h5>Wishlist from: {{wishlist.name}} </h5>
-  <h6>{{wishlist.wishlist_text}}</h6>
+  <h5>Wishlist from: {{user.name}} </h5>
+ 
 
-
+  
   {{/each}}
 </section>
