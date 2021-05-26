@@ -19,15 +19,16 @@ User.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
-    email: {
-      type: DataTypes.STRING,
-      allowNull: false,
       unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
+    // email: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   unique: true,
+    //   validate: {
+    //     isEmail: true,
+    //   },
+    // },
     password: {
       type: DataTypes.STRING,
 
@@ -36,12 +37,25 @@ User.init(
         len: [8],
       },
     },
-    birthday: {
-      type: Sequelize.DATEONLY,
-      validate: {
-        isDate: true,
-      },
+    // birthday: {
+    //   type: Sequelize.DATEONLY,
+    //   allowNull: false,
+    //   validate: {
+    //     isDate: true,
+    //   },
+    // }
+    birthdayMonth: {
+      type: DataTypes.ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'),
+      allowNull: false,
     },
+    birthdayDay: {
+      type: DataTypes.ENUM('1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31'),
+      allowNull: false,
+    },
+    // color: {
+    //   type: DataTypes.ENUM('1', '2', '3', '4', '5', '6', '7'),
+    //   allowNull: false,
+    // }
   },
   {
     hooks: {

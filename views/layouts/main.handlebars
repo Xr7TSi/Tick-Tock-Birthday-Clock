@@ -12,25 +12,36 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        
-        <a href="/">Tick Tock Birthday Clock</a>
-      </h1>
+      
       <nav>
         <!-- Conditionally render login or logout links -->
-        <a href="/">home</a> |
-         {{#if logged_in}}
-        <a href="/dashboard">dashboard</a> |
+        {{!-- <a href="/">home</a> | --}}
+         {{!-- {{#if logged_in}} --}}
+        {{!-- <a href="/dashboard">dashboard</a> |
         <a href="/post">Post wishlist item</a> |
         <a href="api/wishlist/userId/">View Wishlist</a> |
        
         <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+        {{else}} --}}
+        {{!-- <a href="/login">login</a> --}}
+        {{!-- {{/if}} --}}
+      {{!-- </nav> --}}
     </header>
     <main class="container container-fluid mt-5">
+
+{{!-- <div>  
+  <div id="logo">  
+      <h1>
+        <a href="/">Tick Tock Birthday Clock</a>
+      </h1>
+     </div>  
+      <div class="home-buttons">
+        <button><a href="/login">LOGIN</a></button>
+        <button><a href="/login">SIGNUP</a></button>
+      </div>
+</div>  --}}
+
+
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
