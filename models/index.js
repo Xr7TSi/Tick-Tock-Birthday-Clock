@@ -2,14 +2,9 @@ const User = require('./User');
 const Wishlist = require('./Wishlist');
 
 
-User.hasMany(Wishlist, {
-  foreignKey: 'wishlist_id',
-  onDelete: 'CASCADE',
-});
+User.hasMany(Wishlist);
 
-Wishlist.belongsTo(User, {
-  foreignKey: 'wishlist_id',
-});
+Wishlist.belongsTo(User);
 
 
 
