@@ -30,6 +30,7 @@ User.init(
     },
     password: {
       type: DataTypes.STRING,
+
       allowNull: false,
       validate: {
         len: [8],
@@ -37,11 +38,10 @@ User.init(
     },
     birthday: {
       type: Sequelize.DATEONLY,
-      allowNull: false,
       validate: {
         isDate: true,
       },
-    }
+    },
   },
   {
     hooks: {
@@ -50,7 +50,10 @@ User.init(
         return newUserData;
       },
       beforeUpdate: async (updatedUserData) => {
-        updatedUserData.password = await bcrypt.hash(updatedUserData.password, 10);
+        updatedUserData.password = await bcrypt.hash(
+          updatedUserData.password,
+          10
+        );
         return updatedUserData;
       },
     },
@@ -58,7 +61,7 @@ User.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user',
+    modelName: "user",
   }
 );
 
