@@ -10,7 +10,7 @@ html {
 
 .form-select {
   height: 35px;
-  width: 80px;
+  width: 100px;
   padding-left: 10px;
 }
 
@@ -30,6 +30,7 @@ html {
 
 .home-buttons {
   padding-left: 45%;
+  /* font-family: 'Gochi Hand', cursive; */
 }
 
 .logout-btn {
@@ -61,3 +62,5 @@ main.col-auto {
 .signup-container {
   padding-left: 30%;
 }
+
+
