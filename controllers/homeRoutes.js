@@ -39,14 +39,25 @@ router.get('/login', (req, res) => {
 });
 
 
+
 // renders addWishlistItem.handlebars from the /post endpoint
 router.get('/post', (req, res) => {
+  
   res.render('addWishlistItem');
 });
 
 // renders sharedWishList.handlebars from the /wishlist endpoint
-// router.get('/wishlist', (req, res) => {
+// router.get('api/users/', (req, res) => {
 //   res.render('sharedWishlist');
 // });
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
