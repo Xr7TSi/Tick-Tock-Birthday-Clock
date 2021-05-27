@@ -6,7 +6,6 @@ const withAuth = require("../utils/auth");
 
 
 
-
 router.get("/", async (req, res) => {
   res.render("homepage");
 });
@@ -77,8 +76,8 @@ router.get("/friendFoundWishlist", async (req, res) => {
   
   try {
     const userData = await User.findOne({
-      // where: { name: req.body.friendEmail },
-      where: { email: "amanda@gmail.com" },
+      // where: { email: "amanda@gmail.com" },
+      where: { email: friendEmail  },
       include: [{ model: Wishlist }],
     });
 

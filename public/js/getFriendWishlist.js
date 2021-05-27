@@ -1,19 +1,12 @@
-const friendWishlistHandler = async (event) => {
-  event.preventDefault();
-
-  // Collect value from the friend wishlist form
-  const friendName = document.querySelector("#friendName").value.trim();
- 
-  return friendName
-
-  
-}
 
 
+const friendEmail = document.querySelector("#friendEmail").value.trim();
+
+exports.friendEmail = friendEmail
 
 document
   .querySelector(".friend-form")
-  .addEventListener("submit", friendWishlistHandler);
+  .addEventListener("submit");
 
  
   
