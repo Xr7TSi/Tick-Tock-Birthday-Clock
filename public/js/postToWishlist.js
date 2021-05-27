@@ -1,4 +1,4 @@
-const sharedWishlistHandler = async (event) => {
+const userWishlistHandler = async (event) => {
   event.preventDefault();
   const wishlistEntry = document.querySelector("#wishlistEntry").value.trim();
   // code to get wishlist from form
@@ -24,4 +24,4 @@ const sharedWishlistHandler = async (event) => {
 
 document
   .querySelector(".post-form")
-  .addEventListener("submit", sharedWishlistHandler);
+  .addEventListener("submit", userWishlistHandler);
