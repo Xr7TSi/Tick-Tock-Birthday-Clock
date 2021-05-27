@@ -1,6 +1,6 @@
 
 
-const friendEmail = document.querySelector("#friendEmail").value.trim();
+const friendName = document.querySelector("#friendName").value.trim();
 
 
 
