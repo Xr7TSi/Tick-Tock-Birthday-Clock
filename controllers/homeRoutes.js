@@ -76,8 +76,8 @@ router.get("/friendFoundWishlist", async (req, res) => {
   
   try {
     const userData = await User.findOne({
-      // where: { email: "amanda@gmail.com" },
-      where: { email: friendEmail  },
+      where: { email: "sal@hotmail.com" },
+      // where: { email: friendEmail  },
       include: [{ model: Wishlist }],
     });
 
