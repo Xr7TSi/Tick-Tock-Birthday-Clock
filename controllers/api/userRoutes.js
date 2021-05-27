@@ -52,7 +52,6 @@ router.get("/:id", async (req, res) => {
     const user = await User.findByPk(req.params.id, {
       include: [{ model: Wishlist }],
     });
-    // const user = await User.findByPk(req.params.id);
     if (!user) {
       res.status(404).json({ message: "User does not exist" });
       return;
