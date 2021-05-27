@@ -52,7 +52,7 @@ router.post("/", async (req, res) => {
 });
 
 
-// update a wishlist by id and return updated wishlist as JSON payload
+// update a wishlist by id and return updated wishlist as JSON payload.  this is the /api/wishlist/:id endpoint
 /* put should look like this...
       {
         "id": "6",
@@ -76,7 +76,7 @@ router.put("/:id", async (req, res) => {
   }
 });
 
-// delete a wishlist by its `id` value
+// delete a wishlist by its `id` value.  this is the /api/wishlist/:id endpoint
 router.delete("/:id", async (req, res) => {
   try {
     const wishlistDelete = await Wishlist.destroy({
@@ -93,5 +93,38 @@ router.delete("/:id", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
+// render getFriendWishlist.handlebars.  Is used for selecting a friend's wishlist.  this is the /friendWishlist endpoint
+router.get("/friendWishlist", (req, res) => {
+  res.render("getFriendWishlist");
+});
+
+// renders userWishlist.handlebars using friend's name.  this is the /friendFoundWishlist endpoint
+router.get("/friendFoundWishlist", async (req, res) => {
+  
+  try {
+    const userData = await User.findOne({
+      where: { email: "amiko2k20.com" },
+      // were: {email: req.body.friendEmail},
+      include: [{ model: Wishlist }],
+    });
+    const user = userData.get({ plain: true });
+    
+    if (!user) {
+      res.status(404).json({ message: "User does not exist" });
+      return;
+    }
+    console.log(user);
+    res.render("userWishlist", { ...user });
+  } catch (err) {
+    // res.status(500).json(err);
+    res.status(500).json("Ouch");
+  }
+});
+
+
+
+
 
 module.exports = router;

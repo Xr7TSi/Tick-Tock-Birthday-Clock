@@ -76,13 +76,12 @@ router.get("/friendFoundWishlist", async (req, res) => {
   
   try {
     const userData = await User.findOne({
-      where: { email: "sal@hotmail.com" },
-      // where: { email: friendEmail  },
+      where: { email: "amiko2k20.com" },
+      // were: {email: req.body.friendEmail},
       include: [{ model: Wishlist }],
     });
-
     const user = userData.get({ plain: true });
-
+    
     if (!user) {
       res.status(404).json({ message: "User does not exist" });
       return;
@@ -96,24 +95,11 @@ router.get("/friendFoundWishlist", async (req, res) => {
 });
 
 
+router.get("/updateWishlist", (req, res) => {
+  res.render("wishlistUpdate");
+});
 
 
-// router.get("/friendFoundWishlist/", async (req, res) => {
-//   try {
-//     const userData = await User.findOne({
-//       where: { name: req.body.friendName },
-//       // where: { name: "Amanda" },
-//       include: [{ model: Wishlist }],
-//     });
-//     if (!userData) {
-//       res.status(404).json({ message: "Wishlist does not exist" });
-//       return;
-//     }
-//     res.status(200).json(userData);
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 
 
