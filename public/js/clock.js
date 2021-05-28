@@ -57,7 +57,7 @@
 
 
 
-// NEW CLOCK FUNCTION
+// NEW CLOCK FUNCTION---------------------------------
 window.initializeClock = function(clockId, dateId) {
     var getTimeRemaining = function(endtime) {
         var t = Date.parse(endtime) - (new Date()).getTime();
