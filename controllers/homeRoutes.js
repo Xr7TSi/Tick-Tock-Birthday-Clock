@@ -4,7 +4,6 @@ const User = require("../models/User");
 const Wishlist = require("../models/Wishlist");
 const withAuth = require("../utils/auth");
 
-
 router.get("/", async (req, res) => {
   res.render("homepage");
 });
@@ -37,36 +36,63 @@ router.get("/login", (req, res) => {
   res.render("login");
 });
 
-router.get('/signup', (req, res) => {
-  res.render('signup');
-})
-
+router.get("/signup", (req, res) => {
+  res.render("signup");
+});
 
 // renders addWishlistItem.handlebars.  this is the /post endpoint
 router.get("/post", (req, res) => {
   res.render("addWishlistItem");
 });
 
-// renders sharedWishlist.handlebars using current session user ID.  this is the /wishlist endpoint
+// renders userWishlist.handlebars using current session user ID.  this is the /wishlist endpoint
 router.get("/wishlist", async (req, res) => {
   try {
     const userData = await User.findByPk(req.session.user_id, {
       include: [{ model: Wishlist }],
-    }); 
+    });
     const user = userData.get({ plain: true });
-    
+
     if (!user) {
       res.status(404).json({ message: "User does not exist" });
       return;
     }
-    console.log(user)
-    res.render("sharedWishlist", { ...user });
+    console.log(user);
+    res.render("userWishlist", { ...user });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
+// renders getFriendWishlist.handlebars.  Is used for selecting a friend's wishlist.  this is the /friendWishlist endpoint
+router.get("/friendWishlist", (req, res) => {
+  res.render("getFriendWishlist");
+});
 
-  
+// renders userWishlist.handlebars using friend's name.  this is the /friendFoundWishlist endpoint
+router.get("/friendFoundWishlist/:friendName", async (req, res) => {
+  try {
+    const userData = await User.findOne({
+      where: { name: req.params.friendName },
+      include: [{ model: Wishlist }],
+    });
+
+    const user = userData.get({ plain: true });
+
+    if (!user) {
+      res.status(404).json({ message: "User does not exist" });
+      return;
+    }
+
+    res.render("userWishlist", { ...user });
+  } catch (err) {
+    // res.status(500).json(err);
+    res.status(500).json("Ouch");
+  }
+});
+
+router.get("/updateWishlist", (req, res) => {
+  res.render("wishlistUpdate");
+});
 
 module.exports = router;
