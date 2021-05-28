@@ -30,7 +30,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-// get all users api/users endpoint
+// get all users amd their wishlist items api/users endpoint
 router.get("/", async (req, res) => {
   try {
     const allUsers = await User.findAll({
