@@ -70,8 +70,7 @@ body {
   justify-content: center;
   
 }
-
-/* body:before {
+body:before {
   content: "";
   background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(133,210,240,1)), url(../images/Background_2.jpg);
   background-size: cover;
@@ -86,7 +85,7 @@ body {
   -o-filter: blur(1px);
   -ms-filter: blur(1px);
   filter: blur(1px);
-} */
+}
 
 #dashboard-container {
   padding-top: 6%;
