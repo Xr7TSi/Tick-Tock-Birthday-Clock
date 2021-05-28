@@ -3,7 +3,7 @@
   <h1>{{name}}'s Wishlist! </h1>
 
   {{#each wishlists as |wishlist|}}
-    <div">
+    <div>
       <p>
         {{wishlist.wishlist_text}}.
       </p>
@@ -14,9 +14,17 @@
 
 <div id="dashboard-btns">
       <button><a href="/dashboard">Return to your dashboard</a></button>
-       
+
+      <!-- Email (subject, body) -->
+<button><a href="mailto:?subject=Check out my Birthday Wishlist!&amp;body=Check out this site http://www.website.com.">
+    Share Wishlist
+</a></button>
+
+
+
 </div>
 
 
-
+<script src="/path/to/html2canvas.min.js"></script>
+<script src="./js/shareWishlist.js"></script>
   

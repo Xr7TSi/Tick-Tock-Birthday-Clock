@@ -56,6 +56,8 @@
 // timerID = setInterval(countDown, second)
 
 
+
+// NEW CLOCK FUNCTION
 window.initializeClock = function(clockId, dateId) {
     var getTimeRemaining = function(endtime) {
         var t = Date.parse(endtime) - (new Date()).getTime();
@@ -81,6 +83,7 @@ window.initializeClock = function(clockId, dateId) {
         document.getElementById("hours").innerText = t.hours;
         document.getElementById("minutes").innerText = t.minutes;
         document.getElementById("seconds").innerText = t.seconds;
+
 
         
         if(t.total<=0){
