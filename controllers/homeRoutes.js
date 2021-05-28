@@ -4,8 +4,6 @@ const User = require("../models/User");
 const Wishlist = require("../models/Wishlist");
 const withAuth = require("../utils/auth");
 
-
-
 router.get("/", async (req, res) => {
   res.render("homepage");
 });
@@ -72,21 +70,20 @@ router.get("/friendWishlist", (req, res) => {
 });
 
 // renders userWishlist.handlebars using friend's name.  this is the /friendFoundWishlist endpoint
-router.get("/friendFoundWishlist", async (req, res) => {
-  
+router.get("/friendFoundWishlist/:friendName", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { name: "Amiko" },
-      // were: {email: req.body.friendName},
+      where: { name: req.params.friendName },
       include: [{ model: Wishlist }],
     });
+
     const user = userData.get({ plain: true });
-    
+
     if (!user) {
       res.status(404).json({ message: "User does not exist" });
       return;
     }
-    console.log(user);
+
     res.render("userWishlist", { ...user });
   } catch (err) {
     // res.status(500).json(err);
@@ -94,14 +91,8 @@ router.get("/friendFoundWishlist", async (req, res) => {
   }
 });
 
-
 router.get("/updateWishlist", (req, res) => {
   res.render("wishlistUpdate");
 });
-
-
-
-
-
 
 module.exports = router;
