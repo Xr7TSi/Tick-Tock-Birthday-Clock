@@ -21,9 +21,32 @@
 <main class="col-auto">
         {{{body}}}
 
-        <h1 id="time-left"></h1>
+        {{!-- <h1 id="time-left"></h1>
         <h3>Until Your Birthday On {{birthdayMonth}} {{birthdayDay}}</h3>
-      </main>
+      </main> --}}
+
+
+{{!-- ---------------Dashboard Birthday Input----------------------------------}}
+<div id="formdiv">
+    <input id="myDate" type="date">
+    <button onclick="window.initializeClock('clockdiv', 'myDate')">Start</button>
+</div>
+<div id="clockdiv"></div>
+
+  <div class="container">
+  <h1 id="headline">Countdown to my birthday:</h1>
+  <div id="countdown">
+    <ul>
+      <li><span id="days"></span>days</li>
+      <li><span id="hours"></span>Hours</li>
+      <li><span id="minutes"></span>Minutes</li>
+      <li><span id="seconds"></span>Seconds</li>
+    </ul>
+  </div>
+</div>
+{{!-- ------------------------------------------------------------------------}}
+
+
 
 <div id="dashboard-btns">
       <button><a href="/post">Post Wishlist item</a></button>
