@@ -27,12 +27,37 @@ html {
   padding-left: 35%;
   padding-bottom: 3%; */
   width: 50%;
+  color: #85d2f0
+}
+
+#logo-login:hover {
+  text-decoration: none;
+  color: #85d2f0;
 }
 
 .home-buttons {
   position: relative;
   padding-left: 45%;
-  /* font-family: 'Gochi Hand', cursive; */
+  font-family: 'Indie Flower', cursive;
+  font-size: 42px;
+}
+
+a {
+  color: #3d54ee;
+}
+
+a:hover {
+  text-decoration: none !important;
+  color: #3d54ee;
+  border: none;
+}
+
+#home-login, #home-signup {
+  width: 200px;
+  height: 100px;
+  background-color: white;
+  border: none;
+  border-radius: 15px;
 }
 
 .logout-btn {
@@ -45,7 +70,6 @@ body {
   justify-content: center;
   
 }
-
 body:before {
   content: "";
   background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(133,210,240,1)), url(../images/Background_2.jpg);
@@ -87,6 +111,77 @@ main.col-auto {
 
 .signup-container {
   padding-left: 30%;
+}
+
+
+
+
+/* NEW STYLING------------------- */
+/* styling that came with the countdown clock i found */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  align-items: center;
+  /* background-color: #ffd54f; */
+  display: flex;
+  font-family: -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    Roboto, 
+    Oxygen-Sans, 
+    Ubuntu, 
+    Cantarell, 
+    "Helvetica Neue", 
+    sans-serif;
+}
+
+.container {
+  color: #333;
+  margin: 0 auto;
+  text-align: center;
+}
+
+h1 {
+  font-weight: normal;
+  letter-spacing: .125rem;
+  text-transform: uppercase;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  li {
+    font-size: 1.125rem;
+    padding: .75rem;
+  }
+  
+  li span {
+    font-size: 3.375rem;
+  }
 }
 
 
