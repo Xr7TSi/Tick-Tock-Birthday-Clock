@@ -117,6 +117,19 @@ main.col-auto {
 }
 
 
+#user-wishlist {
+  background: url(../images/paper-pencil.png);
+  background-size: cover;
+  padding-top: 20px;
+  height: 648px;
+  width: 504px;
+}
+
+#wishlist-text {
+  padding: 15px 0px 0px 100px;
+  text-align: left;
+}
+
 
 
 /* NEW STYLING------------------- */
