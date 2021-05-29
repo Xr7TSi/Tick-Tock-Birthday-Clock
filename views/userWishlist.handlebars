@@ -1,11 +1,13 @@
-<section>
+<section id="user-wishlist">
+   
+
    
   <h1>{{name}}'s Wishlist! </h1>
 
   {{#each wishlists as |wishlist|}}
     <div>
-      <p>
-        {{wishlist.wishlist_text}}.
+      <p id="wishlist-text">
+        {{wishlist.wishlist_text}}
       </p>
     </div>
   {{/each}}
@@ -25,6 +27,6 @@
 </div>
 
 
-<script src="/path/to/html2canvas.min.js"></script>
-<script src="./js/shareWishlist.js"></script>
+{{!-- <script src="/path/to/html2canvas.min.js"></script> --}}
+{{!-- <script src="./js/shareWishlist.js"></script> --}}
   
