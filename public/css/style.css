@@ -61,6 +61,7 @@ a:hover {
 }
 
 .logout-btn {
+  position: relative;
   padding-left: 90%;
 }
 
@@ -97,10 +98,12 @@ main.col-auto {
 }
 
 #dashboard-btns {
+  position: relative;
   padding-top: 15px;
 }
 
 #dashboard-logo {
+  position: relative;
   width: 50%;
   padding: 0;
 }

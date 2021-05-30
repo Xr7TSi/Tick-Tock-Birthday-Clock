@@ -54,7 +54,20 @@
 // }
  
 // timerID = setInterval(countDown, second)
-
+//get user birthday
+const birthDayHandler = async (req, res) => {
+    if (req.session.loggedIn) {
+        const userID = req.session.user_id.value;
+        const user = await User.findOne({ where: { id: `${userID}` } });
+        if (user === null) {
+          console.log('No user found!');
+        } else {
+          console.log(user instanceof User); // true
+        const birthDay = user.birthday;
+        console.log(birthDay);
+    }
+    }  
+};
 
 
 // NEW CLOCK FUNCTION---------------------------------
@@ -91,3 +104,4 @@ window.initializeClock = function(clockId, dateId) {
         }
     }, 1000);
 }
+
