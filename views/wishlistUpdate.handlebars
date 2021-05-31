@@ -2,21 +2,23 @@
    
   <h1>Update Your Wishlist! </h1>
 
-<form class="update-delete-form">
+<form id="edit-wishlist-form">
 
   <div class="mb-3">
-    <label for="updateWishlistEntry" class="form-label">Update your wishlist here!</label>
-    <textarea class="form-control" id="updateWishlistEntry" rows="10"></textarea>
+    <input type="hidden" name="item-id" value="{{wishId}}" />
+    <input type="hidden" name="user-id" value="{{usrID}}" />
+    <label for="wishlist-text" class="form-label">Update your wishlist item here!</label>
+    <textarea class="form-input" id="updateWishlistEntry" name="wishlist-text">{{item}}</textarea>
   </div>
   <div class="form-group">
     <button class="btn btn-primary" type="submit">Update List</button>
-    <button class="btn btn-primary" id="delete-btn" type="button">Delete List Item</button>
+    <button class="btn btn-primary" id="delete-item-btn" type="button">Delete List Item</button>
   </div>
 </form>
 
-<div id="dashboard-btns">
+<div id="dashboard-btns"></button>
       <button><a href="/dashboard">Return to your dashboard</a></button>
        
 </div>
 
-<script src="./js/updateWishlist.js"></script>
+<script src="/js/updateWishlist.js"></script>

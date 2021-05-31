@@ -60,6 +60,10 @@ a:hover {
   border-radius: 15px;
 }
 
+.form-group, #login-btn {
+  position: relative;
+}
+
 .logout-btn {
   position: relative;
   padding-left: 90%;
@@ -130,6 +134,10 @@ main.col-auto {
   text-align: left;
 }
 
+.wish-list-group {
+  padding-bottom: .25rem;
+}
+
 
 
 /* NEW STYLING------------------- */
@@ -161,6 +169,7 @@ body {
 }
 
 .container {
+  position: relative;
   color: #333;
   margin: 0 auto;
   text-align: center;

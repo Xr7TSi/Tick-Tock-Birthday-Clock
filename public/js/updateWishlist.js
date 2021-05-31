@@ -1,27 +1,29 @@
+const wishlistID = document.querySelector('input[name="item-id"]').value;
+console.log('The ID is '+ wishlistID)
 const updateWishlistHandler = async (event) => {
     event.preventDefault();
-    const updatewishlistEntry = document.querySelector("#wishlistEntry").value.trim();
+
+    const wishlist_text = document.querySelector('textarea[name="wishlist-text"]').value.trim();
+    const userId = document.querySelector('input[name="user-id"]').value;
     // code to get wishlist from form
-    if (updatewishlistEntry) {
-      const response = await fetch('./api/wishlist', {
-        method: 'POST',
-        body: JSON.stringify({ updatewishlistEntry }),
+
+    await fetch(`/api/wishlist/${wishlistID}`, {
+        method: 'PUT',
+        body: JSON.stringify({
+          wishlist_text,
+          userId,
+        }),
         headers: { "Content-Type": "application/json" },
       });
+        document.location.replace('/wishlist');
+      };
   
-      if (response.ok) {
-        document.location.replace("/dashboard");
-      } else {
-        alert("Failed to post.");
-      }
+const deleteWishlistItemHandler = async function () {
+  await fetch(`/api/wishlist/${wishlistID}`, {
+    method: 'DELETE',
+  });
+  document.location.replace('/wishlist');
+};
   
-      if (response.ok) {console.log("HI"), console.log(wishlistEntry + "  updateWishlist.js");
-      } else {
-        alert("Failed to update wishlist.");
-      }
-    } 
-  };
-  
-  document
-    .querySelector(".post-form")
-    .addEventListener("submit", updateWishlistHandler);
+  document.querySelector("#edit-wishlist-form").addEventListener("submit", updateWishlistHandler);
+  document.querySelector("#delete-item-btn").addEventListener("click", deleteWishlistItemHandler);
