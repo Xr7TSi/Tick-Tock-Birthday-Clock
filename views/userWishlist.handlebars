@@ -5,10 +5,10 @@
   <h1>{{name}}'s Wishlist! </h1>
 
   {{#each wishlists as |wishlist|}}
-    <div>
-      <p id="wishlist-text">
-        {{wishlist.wishlist_text}}
-      </p>
+    <div class="wish-list-group">
+      <a id="wishlist-text" class="list-item" href="/api/wishlist/{{id}}">
+        <span>{{id}}. {{wishlist.wishlist_text}}</span>
+      </a>
     </div>
   {{/each}}
  
