@@ -1,39 +1,32 @@
 
-        
-
-
-
-       <div class="logout-btn">
-        <button id="logout">logout</button>
-      </div>
-
 <div id="dashboard-logo">
-      <a href="/"><img src="../images/logo.png"  id="logo-login"></a>
+      <a href="/"><img src="../images/logo.png"  id="logo-dashboard"></a>
 </div>
+
+<br><br>   
 
 <div id="dashboard-container">
 <div class="row" id="welcome">
   <div class="col-auto">
-    <h2>Welcome, {{name}}!</h2>
+    <h1>Hi {{name}}!</h1>
   </div>
 </div>
-
+<br><br>
 <main class="col-auto">
         {{{body}}}
 
-        {{!-- <h1 id="time-left"></h1>
-        <h3>Until Your Birthday On {{birthdayMonth}} {{birthdayDay}}</h3>
-      </main> --}}
 
-
-{{!-- ---------------NEW Dashboard Birthday Input----------------------------------}}
+<pre>Enter your birthday in the calendar 
+  and start the clock!</pre>
+  <br><br>
 <div id="formdiv">
     <input id="myDate" type="date">
-    <button onclick="window.initializeClock('clockdiv', 'myDate')">Start</button>
+    <button id="start-btn" onclick="window.initializeClock('clockdiv', 'myDate')">Start Countdown!</button>
 </div>
 <div id="clockdiv"></div>
 
-  <div class="container">
+<br><br>
+  <div class="container hide-countdown">
   <h1 id="headline">Countdown to my birthday:</h1>
   <div id="countdown">
     <ul>
@@ -44,20 +37,20 @@
     </ul>
   </div>
 </div>
-{{!-- ------------------------------------------------------------------------}}
 
-
-
-
+<br><br>
 <div id="dashboard-btns">
-      <button><a href="/post">Add to Wishlist</a></button>
       {{!-- <button><a href="/updateWishlist">Change Wishlist</a></button> --}}
-        <button><a href="/wishlist">View Wishlist</a></button>
-        <button><a href="/friendWishlist">Find a Friend's Wishlist</a></button>
+      <button class="dashboard-btn"><a href="/wishlist">View My Wishlist</a></button>
+      <button class="dashboard-btn"><a href="/post">Add to My Wishlist</a></button>
+      <button class="dashboard-btn"><a href="/friendWishlist">Find a Friend's Wishlist</a></button>
+      <button class="dashboard-btn" id="logout-btn">Logout</button>
 </div>
-        </div>
+
+</div>
 
 <script src="/js/clock.js"></script>
+<script src="/js/logout.js"></script>
 
 
 
