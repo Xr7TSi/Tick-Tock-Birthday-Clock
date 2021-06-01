@@ -1,80 +1,9 @@
+/* -----------------Overall Styling-------------------------- */
+
 html { 
-  /* background: url(../images/logo.png) no-repeat center center fixed; */
-  /* -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; */ 
   background-color: #85d2f0;
 }
 
-.form-select {
-  height: 35px;
-  width: 100px;
-  padding-left: 10px;
-}
-
-#logo {
-  margin: 20rem rem 10rem 0rem;
-  position: relative;
-  /* padding-top: 20%; */
-  /* padding-left: 10%; */
-  /* height: 10%; */
-  width: 100%;
-}
-
-#logo-login {
-  /* padding-top: 3%;
-  padding-left: 35%;
-  padding-bottom: 3%; */
-  width: 50%;
-  color: #85d2f0
-}
-
-#logo-login:hover {
-  text-decoration: none;
-  color: #85d2f0;
-}
-
-.home-buttons {
-  position: relative;
-  padding-left: 45%;
-  font-family: 'Indie Flower', cursive;
-  font-size: 42px;
-}
-
-a {
-  color: #3d54ee;
-}
-
-a:hover {
-  text-decoration: none !important;
-  color: #3d54ee;
-  border: none;
-}
-
-#home-login, #home-signup {
-  width: 200px;
-  height: 100px;
-  background-color: white;
-  border: none;
-  border-radius: 15px;
-}
-
-.form-group, #login-btn {
-  position: relative;
-}
-
-.logout-btn {
-  position: relative;
-  padding-left: 90%;
-}
-
-body {
-  display: flexbox;
-  align-items: center;
-  justify-content: center;
-  
-}
 body:before {
   content: "";
   background: linear-gradient(to bottom, rgba(255,255,255,0) 50%, rgba(133,210,240,1)), url(../images/Background_2.jpg);
@@ -92,56 +21,156 @@ body:before {
   filter: blur(1px);
 }
 
-#dashboard-container {
-  padding-top: 6%;
-  text-align: center;
+a {
+  color: white;
 }
 
-main.col-auto {
-  padding-left: 0;
+a:hover {
+  text-decoration: none !important;
+  color: #3d54ee;
+  border: none;
 }
 
-#dashboard-btns {
+/* -----------------Homepage Styling-------------------------- */
+
+#home-logo {
+  margin: 20rem rem 10rem 0rem;
   position: relative;
-  padding-top: 15px;
+  width: 100%;
 }
 
-#dashboard-logo {
+.home-buttons {
   position: relative;
-  width: 50%;
-  padding: 0;
+  padding-left: 45%;
+  /* font-family: 'Indie Flower', cursive; */
+  font-size: 42px;
+}
+
+#home-login, #home-signup {
+  width: 200px;
+  height: 100px;
+  background-color: #2E3E50;
+  border: none;
+  border-radius: 10px;
+}
+
+/* -----------------Login Page Styling-------------------------- */
+
+#logo-login {
+  width: 100%;
+  color: #85d2f0
+}
+
+#logo-login:hover {
+  text-decoration: none;
+  color: #85d2f0;
 }
 
 .login-container {
   padding-left: 30%;
+  width: 70%;
+}
+
+#login-btn {
+  width: 100px;
+  height: 50px;
+  background-color: #2E3E50;
+  border: none;
+  border-radius: 10px;
+  /* font-family: 'Indie Flower', cursive; */
+  font-size: 24px;
+  color: white;
+}
+
+#login-btn:hover {
+  text-decoration: none !important;
+  color: #3d54ee;
+  border: none;
+}
+
+/* -----------------Signup Page Styling-------------------------- */
+
+#logo-signup {
+  width: 100%;
+  color: #85d2f0
+}
+
+#logo-signup:hover {
+  text-decoration: none;
+  color: #85d2f0;
 }
 
 .signup-container {
   padding-left: 30%;
+  width: 70%;
 }
 
-
-#user-wishlist {
-  background: url(../images/paper-pencil.png);
-  background-size: cover;
-  padding-top: 20px;
-  height: 648px;
-  width: 504px;
+#signup-btn {
+  width: 100px;
+  height: 50px;
+  background-color: #2E3E50;
+  border: none;
+  border-radius: 10px;
+  /* font-family: 'Indie Flower', cursive; */
+  font-size: 24px;
+  color: white;
 }
 
-#wishlist-text {
-  padding: 15px 0px 0px 100px;
-  text-align: left;
+#signup-btn:hover {
+  text-decoration: none !important;
+  color: #3d54ee;
+  border: none;
 }
 
-.wish-list-group {
-  padding-bottom: .25rem;
+/* -----------------Dashboard Page Styling-------------------------- */
+
+#logout-btn:hover {
+  text-decoration: none !important;
+  color: #3d54ee;
+  border: none;
 }
 
+#logo-dashboard {
+  position: relative;
+  padding-left: 30%;
+  width: 70%;
+}
 
+#dashboard-container {
+  /* padding-top: 6%; */
+  text-align: center;
+}
 
-/* NEW STYLING------------------- */
-/* styling that came with the countdown clock i found */
+pre {
+  font-family: -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    Roboto, 
+    Oxygen-Sans, 
+    Ubuntu, 
+    Cantarell, 
+    "Helvetica Neue", 
+    sans-serif;
+    font-size: 36px;
+}
+
+.hide-countdown {
+  display: none;
+}
+
+.dashboard-btn {
+  width: 250px;
+  height: 50px;
+  background-color: #2E3E50;
+  border: none;
+  border-radius: 10px;
+  /* font-family: 'Indie Flower', cursive; */
+  font-size: 24px;
+  color: white;
+}
+
+/* -----------------Countdown Clock Styling-------------------------- */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -155,7 +184,6 @@ html, body {
 
 body {
   align-items: center;
-  /* background-color: #ffd54f; */
   display: flex;
   font-family: -apple-system, 
     BlinkMacSystemFont, 
@@ -172,7 +200,7 @@ body {
   position: relative;
   color: #333;
   margin: 0 auto;
-  text-align: center;
+  /* text-align: center; */
 }
 
 h1 {
@@ -208,5 +236,48 @@ li span {
     font-size: 3.375rem;
   }
 }
+
+/* -----------------Wishlist Pages Styling-------------------------- */
+
+#user-wishlist {
+  background: url(../images/paper-pencil.png);
+  background-size: cover;
+  padding-top: 20px;
+  height: 648px;
+  width: 504px;
+  text-align: center;
+}
+
+.wishlist-page {
+  padding-left: 70%;
+}
+
+#wishlist-text {
+  color: #000;
+}
+
+.wish-list-group {
+  padding-bottom: .25rem;
+}
+
+.wishlist-btn {
+  width: 250px;
+  height: 50px;
+  background-color: #2E3E50;
+  border: none;
+  border-radius: 10px;
+  /* font-family: 'Indie Flower', cursive; */
+  font-size: 24px;
+  color: white;
+  display: inline-block;
+}
+
+.add-wishlist {
+  /* width: 700px;
+  padding-left: 80%; */
+  text-align: center;
+  margin-left: 250%;
+}
+
 
 

@@ -1,6 +1,6 @@
 <div class="signup-container">  
  
-      <a href="/"><img src="../images/logo.png"  id="logo-login"></a>
+      <a href="/"><img src="../images/logo.png"  id="logo-signup"></a>
      
       {{!-- <div class="home-buttons">
         <button><a href="/login">LOGIN</a></button>
@@ -9,7 +9,7 @@
 
 
 
-<div class="col-md-6">
+<div class="col-md-12">
     <h2>Signup</h2>
 
     <form class="form signup-form">
@@ -22,14 +22,14 @@
         <input class="form-input" type="text" id="email-signup" />
       </div> --}}
       <div class="form-group">
-        <label for="password-signup">What is your password?</label>
+        <label for="password-signup">What would you like your password to be?</label>
         <input class="form-input" type="password" id="password-signup" placeholder="minimum 8 characters"/>
       </div>
       <br>
-       <div class="form-group">
-        <label for="birthday-signup">What is your birthday?</label>
+       {{!-- <div class="form-group">
+        <label for="birthday-signup">What is your birthday?</label> --}}
         {{!-- <input class="form-input" type="date" id="birthday-signup" placeholder="MM/DD/YYYY"/> --}}
-        <select class="form-select" id="month-signup" aria-label="Default select example">
+        {{!-- <select class="form-select" id="month-signup" aria-label="Default select example">
           <option selected>Month</option>
           <option value="1">January</option>
           <option value="2">February</option>
@@ -79,7 +79,7 @@
           <option value="31">31</option>
         </select>
       </div>
-      <br>
+      <br> --}}
       {{!-- <div class="form-group">
         <label for="color-signup">favorite color:</label>
         <select class="form-select" id="color-signup" aria-label="Default select example">

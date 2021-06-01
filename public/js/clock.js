@@ -69,6 +69,13 @@ const birthDayHandler = async (req, res) => {
     }  
 };
 
+const startBtn = document.getElementById("start-btn");
+const countdownClock = document.querySelector(".hide-countdown");
+
+startBtn.addEventListener("click", function () {
+    countdownClock.classList.remove("hide-countdown");
+});
+
 
 // NEW CLOCK FUNCTION---------------------------------
 window.initializeClock = function(clockId, dateId) {
