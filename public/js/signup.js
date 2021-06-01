@@ -5,13 +5,13 @@ const signupFormHandler = async (event) => {
     // const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
     // const birthday = document.querySelector('#birthday-signup').value.trim();
-    const birthdayMonth = document.querySelector('#month-signup').value.trim();
-    const birthdayDay = document.querySelector('#day-signup').value.trim();
+    // const birthdayMonth = document.querySelector('#month-signup').value.trim();
+    // const birthdayDay = document.querySelector('#day-signup').value.trim();
   
-    if (name && password && birthdayMonth && birthdayDay) {
+    if (name && password) {
       const response = await fetch('/api/users/', {
         method: 'POST',
-        body: JSON.stringify({ name, password, birthdayMonth, birthdayDay }),
+        body: JSON.stringify({ name, password }),
         headers: { 'Content-Type': 'application/json' },
       });
   
@@ -22,9 +22,4 @@ const signupFormHandler = async (event) => {
       }
     }
   };
-  
-
-  document
-  .querySelector('.signup-form')
-  .addEventListener('submit', signupFormHandler);
-  
+  document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
