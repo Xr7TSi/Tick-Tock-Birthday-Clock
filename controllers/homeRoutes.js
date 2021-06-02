@@ -70,10 +70,10 @@ router.get("/friendWishlist", (req, res) => {
 });
 
 // renders userWishlist.handlebars using friend's name.  this is the /friendFoundWishlist endpoint
-router.get("/friendFoundWishlist/:friendName", async (req, res) => {
+router.get("/friendFoundWishlist/:friendEmail", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { name: req.params.friendName },
+      where: { email: req.params.friendEmail },
       include: [{ model: Wishlist }],
     });
 
