@@ -7,12 +7,12 @@ const wishlistFormHandler = async (event) => {
 
   if (friendEmail) {
     // send a GET request to the friendFoundWishlist/friendName endpoint
-    const response = await fetch(`/friendFoundWishlist/${friendEmail}`, {
+    const response = await fetch(`/api/wishlist/friendFoundWishlist/${friendEmail}`, {
       method: "GET",
     });
 
     if (response.ok) {
-      document.location.replace(`/friendFoundWishlist/${friendEmail}`);
+      document.location.replace(`/api/wishlist/friendFoundWishlist/${friendEmail}`);
       console.log("Hi");
     } else {
       alert(response.statusText);
