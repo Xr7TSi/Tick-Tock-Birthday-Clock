@@ -69,11 +69,11 @@ router.get("/friendWishlist", (req, res) => {
   res.render("getFriendWishlist");
 });
 
-// renders userWishlist.handlebars using friend's name.  this is the /friendFoundWishlist endpoint
-router.get("/friendFoundWishlist/:friendName", async (req, res) => {
+// renders userWishlist.handlebars using friend's email.  this is the /friendFoundWishlist endpoint
+router.get("/friendFoundWishlist/:friendEmail", async (req, res) => {
   try {
     const userData = await User.findOne({
-      where: { name: req.params.friendName },
+      where: { email: req.params.friendEmail },
       include: [{ model: Wishlist }],
     });
 
@@ -86,7 +86,6 @@ router.get("/friendFoundWishlist/:friendName", async (req, res) => {
 
     res.render("userWishlist", { ...user });
   } catch (err) {
-    // res.status(500).json(err);
     res.status(500).json("Ouch");
   }
 });

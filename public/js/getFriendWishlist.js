@@ -2,17 +2,17 @@ const wishlistFormHandler = async (event) => {
   event.preventDefault();
 
   // collect value from friend-form on getFriendWishlist.handlebars
-  const friendName = document.querySelector("#friendName").value.trim();
-  console.log(friendName + " is identified by handler");
+  const friendEmail = document.querySelector("#friendEmail").value.trim();
+  console.log(friendEmail + " is identified by handler");
 
-  if (friendName) {
-    // send a GET request to the friendFoundWishlist/friendName endpoint
-    const response = await fetch(`/friendFoundWishlist/${friendName}`, {
+  if (friendEmail) {
+    // send a GET request to the friendFoundWishlist/ endpoint
+    const response = await fetch(`/friendFoundWishlist/${friendEmail}`, {
       method: "GET",
     });
 
     if (response.ok) {
-      document.location.replace(`/friendFoundWishlist/${friendName}`);
+      document.location.replace(`/friendFoundWishlist/${friendEmail}`);
       console.log("Hi");
     } else {
       alert(response.statusText);
