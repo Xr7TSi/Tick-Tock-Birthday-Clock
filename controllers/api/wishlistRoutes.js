@@ -118,34 +118,7 @@ router.delete("/:id", async (req, res) => {
 });
 
 
-// render getFriendWishlist.handlebars.  Is used for selecting a friend's wishlist.  this is the api/wishlist/friendWishlist endpoint
-router.get("/friendWishlist", (req, res) => {
-  res.render("getFriendWishlist");
-});
 
-// renders userWishlist.handlebars using friend's name.  this is the api/wishlist/friendFoundWishlist endpoint
-router.get("/friendFoundWishlist/:email", async (req, res) => {
-  
-  try {
-    const userData = await User.findOne({
-      // where: { email: "amanda@gmail.com" },
-      where: { email: req.params.email,},
-      // were: {email: req.body.friendName},  Shouldn't this be params?
-      include: [{ model: Wishlist }],
-    });
-    const user = userData.get({ plain: true });
-    
-    if (!user) {
-      res.status(404).json({ message: "User does not exist" });
-      return;
-    }
-    console.log(user);
-    res.render("userWishlist", { ...user });
-  } catch (err) {
-    // res.status(500).json(err);
-    res.status(500).json("Ouch");
-  }
-});
 
 
 

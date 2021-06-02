@@ -6,7 +6,7 @@ const wishlistFormHandler = async (event) => {
   console.log(friendEmail + " is identified by handler");
 
   if (friendEmail) {
-    // send a GET request to the friendFoundWishlist/ endpoint
+    // send a GET request to the friendFoundWishlist/friendName endpoint
     const response = await fetch(`/friendFoundWishlist/${friendEmail}`, {
       method: "GET",
     });
