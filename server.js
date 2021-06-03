@@ -42,4 +42,4 @@ sequelize.sync({ force: false }).then(() => {
 });
 
 
-// use npm run dev to start application.  THis will trigger live server restarts with each save of your code. JDR
+// use npm run dev to start application.  THis will trigger live server restarts with each save of your code.
