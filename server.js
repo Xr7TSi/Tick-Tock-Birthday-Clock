@@ -4,6 +4,7 @@ const session = require('express-session');
 const exphbs = require('express-handlebars');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
+var compression = require('compression')
 
 
 const sequelize = require('./config/connection');
@@ -26,6 +27,15 @@ const sess = {
 };
 
 app.use(session(sess));
+
+app.use(compression({ filter: shouldCompress }))
+
+function shouldCompress (req, res) {
+  if (req.headers['x-no-compression']) {
+    return false
+  }
+  return compression.filter(req, res)
+}
 
 // Inform Express.js on which template engine to use
 app.engine('handlebars', hbs.engine);

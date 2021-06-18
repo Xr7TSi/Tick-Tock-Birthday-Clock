@@ -123,11 +123,6 @@ router.get("/friendFoundWishlist/:friendEmail", async (req, res) => {
   }
 });
 
-router.get("/updateWishlist", (req, res) => {
-  res.render("wishlistUpdate");
-});
-
-
 
 
 
